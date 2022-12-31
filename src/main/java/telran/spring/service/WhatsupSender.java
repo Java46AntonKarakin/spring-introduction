@@ -4,8 +4,8 @@ import org.springframework.stereotype.Service;
 
 @Service("whatsup")
 public class WhatsupSender implements Sender {
-	String correctAdress = "Internet message: \"%s\" has been sent to phone number %s%n";
-	String inCorrectAdress = "incorrect address%n";
+	String correctAdress = "Internet message: \"%s\" has been sent to %s%n";
+	String inCorrectAdress = "incorrect phone number%n";
 	String regEx = "[\\d]{3}\\-[\\d]{7}";
 
 	@Override

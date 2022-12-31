@@ -21,12 +21,12 @@ public class MessageSender {
 		List<String> options = senders.entrySet().stream().map(etr -> etr.getKey()).collect(Collectors.toList());
 		options.add("exit");
 		while (true) {
-			String msgType = io.readOption("Enter message type or \"exit\"", "Wrong message type", options);
+			String msgType = io.readOption("Enter message type or \"exit\"", "Wrong message type", options).toLowerCase();
 			if (msgType.toLowerCase().equals("exit")) {
 				break;
 			}
 			String msgText = io.readString("Enter message text");
-			String msgAddress = io.readString("Enter message address");
+			String msgAddress = io.readString("Enter address according to the message type").toLowerCase();
 			senders.get(msgType).send(msgText, msgAddress);
 		}
 	}

@@ -4,8 +4,8 @@ import org.springframework.stereotype.Service;
 
 @Service("sms")
 public class SmsSender implements Sender {
-	String correctAdress = "SMS message: %s has been sent to phone number %s%n";
-	String inCorrectAdress = "incorrect address%n";
+	String correctAdress = "SMS message: %s has been sent to %s%n";
+	String inCorrectAdress = "incorrect phone number%n";
 	String regEx = "[\\d]{3}\\-[\\d]{7}";
 
 	@Override
