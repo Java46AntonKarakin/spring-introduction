@@ -5,15 +5,15 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
 import telran.spring.controller.MessageSender;
+import telran.view.ConsoleInputOutput;
 
 @SpringBootApplication
 public class SpringArchitectureApplication {
 
 	public static void main(String[] args) {
-		ConfigurableApplicationContext ct = SpringApplication.run(SpringArchitectureApplication.class, args);
-
-		MessageSender messageSender = ct.getBean(MessageSender.class);
-		messageSender.viewBasedMenu(args);
-		ct.close();
+		
+				SpringApplication.run(SpringArchitectureApplication.class, args);
+		
 	}
+
 }

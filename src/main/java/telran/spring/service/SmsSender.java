@@ -2,16 +2,18 @@ package telran.spring.service;
 
 import org.springframework.stereotype.Service;
 
+import telran.spring.dto.*;
+
 @Service("sms")
 public class SmsSender implements Sender {
-	String correctAdress = "SMS message: %s has been sent to %s%n";
-	String inCorrectAdress = "incorrect phone number%n";
-	String regEx = "[\\d]{3}\\-[\\d]{7}";
 
 	@Override
-	public void send(String text, String address) {
-		String output = address.matches(regEx) ? String.format(correctAdress, text, address)
-				: String.format(inCorrectAdress, address);
-		System.out.printf(output);
+	public String send(Message message) {
+		SmsMessage smsMessage = (SmsMessage) message;
+		return String.format("sms sender text '%s' has been sent to %s\n", smsMessage.text,
+				smsMessage.phoneNumber);
+
 	}
+	
+
 }
