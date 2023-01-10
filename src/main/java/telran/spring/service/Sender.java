@@ -1,5 +1,12 @@
 package telran.spring.service;
 
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import telran.spring.dto.Message;
+
 public interface Sender {
-	void send(String text, String address);
+	static Logger LOG = LoggerFactory.getLogger(Sender.class);
+String send(Message message);
 }
